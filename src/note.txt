@@ -1,0 +1,21 @@
+- src 
+    - components: chứa dump components, các components dùng để sử dụng bên trong các component khác, thông thường chỉ nhận póp và render UI, ít xử lí logic, Ex: Button, card, 
+    - pages: Chứa các components cấu thành 1 page, có các xử lý logic bên trong những component này, như gọi API,.. 
+    - hooks: chứa các custom hooks, (use+Name): useRequest, useABC 
+    - services: Nơi setup API 
+    - styles: nơi đặt các file css/scss
+                + Sử dụng scss trong react: npm i -D sass 
+    - utils: chứa các common function để tái sử dụng trong project 
+    * có redux : 
+    - action: chứa action của redux 
+    - constants: chứ constants của project và type của redux
+    - reducers: chứ reducers của redux 
+    - layout: chứa các component layout 
+    - auth: chứa các component và các hàm xử lí liên quan đến authentication 
+
+    setup project : 
+        lib: axios redux react-redux react-thunk react-router-dom reactstrap bootstrap 
+        npm i react-hook-form : validate
+        npm install @hookform/resolvers yup : rút gọn code 
+
+    
