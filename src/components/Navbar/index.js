@@ -16,14 +16,15 @@ import {
   Button,
 } from "reactstrap";
 
-const Example = (props) => {
+const NavMenu = ({ userInfo }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
-  if (props) {
-    const username = JSON.parse(
-      localStorage.getItem("userInfo") ? localStorage.getItem("userInfo") : ""
-    );
+  if (userInfo) {
+    // const username = JSON.parse(
+    //   localStorage.getItem("userInfo") ? localStorage.getItem("userInfo") : ""
+    // );
+    const username = userInfo?.taiKhoan;
     return (
       <>
         <Navbar color="light" light expand="md">
@@ -32,14 +33,10 @@ const Example = (props) => {
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
               <NavItem>
-                <NavLink>
-                  <Link to="/courses/FullStack">Course</Link>
-                </NavLink>
+                  <Link className="nav-link" to="/courses/FullStack">Course</Link>
               </NavItem>
               <NavItem>
-                <NavLink>
-                  <Link to="/courses/BackEnd">Course</Link>
-                </NavLink>
+                  <Link  className="nav-link" to="/courses/BackEnd">Course</Link>
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
@@ -53,7 +50,7 @@ const Example = (props) => {
                 </DropdownMenu>
               </UncontrolledDropdown>
             </Nav>
-            <p>{username.taiKhoan}</p>
+            <p>{username}</p>
           </Collapse>
         </Navbar>
       </>
@@ -86,13 +83,13 @@ const Example = (props) => {
               </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>
-          <Button className="btn btn-login">
-            <a href="http://localhost:3000/login">Login</a>
-          </Button>
+          <a href="http://localhost:3000/login">
+            <Button className="btn btn-login">Login</Button>
+          </a>
         </Collapse>
       </Navbar>
     </>
   );
 };
 
-export default Example;
+export default NavMenu;

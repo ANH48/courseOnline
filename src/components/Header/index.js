@@ -14,7 +14,7 @@ import {
   NavbarText
 } from 'reactstrap';
 import { login } from "src/actions/auth";
-import Example from "../Navbar";
+import NavMenu from "../Navbar";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function Header() {
@@ -40,7 +40,7 @@ export default function Header() {
                   </span>
                   <span className="email">
                     <i className="far fa-paper-plane"></i>
-                    <a href="#">hello@reptro.com</a>
+                    <a href="#">tnasd2507@gmail.com</a>
                   </span>
                   <span className="phone">
                     <i className="fas fa-phone"></i>
@@ -83,10 +83,10 @@ export default function Header() {
           </div>
         </div>
         <div className="navMenu">
-          <Example 
-            userInfo
+          <NavMenu 
+            userInfo= {userInfo}
             >
-            </Example>
+            </NavMenu>
               
         </div>
       </div>
