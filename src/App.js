@@ -1,5 +1,5 @@
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
-import {lazy,Suspense} from 'react'
+import { lazy, Suspense } from "react";
 // import logo from "./logo.svg";
 import "./styles";
 
@@ -11,15 +11,12 @@ import "./styles";
 // import AdminUsers from "./pages/AdminUsers";
 // import LoginPage from "./pages/LoginPage";
 
-
-
-
 // Layout
 import AppLayout from "./layouts/AppLayout";
 import AdminLayout from "./layouts/AdminLayout";
 import AdminRoute from "./auth/AdminRoute";
 
-// Sử dụng lazy load : không import trực tiếp 
+// Sử dụng lazy load : không import trực tiếp
 const Home = lazy(() => import("./pages/Home"));
 const Courses = lazy(() => import("./pages/Courses"));
 const Course = lazy(() => import("./pages/Course"));
@@ -30,13 +27,13 @@ const LoginPage = lazy(() => import("./pages/LoginPage"));
 function App() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
-    <BrowserRouter>
-      <Switch>
-        {/* Route Admin  */}
-        <Route path="/admin">
-          <AdminLayout>
+      <BrowserRouter>
+        <Switch>
+          {/* Route Admin  */}
+          <Route path="/admin">
+            <AdminLayout>
               <Switch>
-                <Redirect exact from="/admin" to="/admin/courses"/>
+                <Redirect exact from="/admin" to="/admin/courses" />
                 <AdminRoute path="/admin/courses">
                   <AdminCourses />
                 </AdminRoute>
@@ -44,34 +41,35 @@ function App() {
                   <AdminUsers />
                 </AdminRoute>
               </Switch>
-          </AdminLayout>
-        </Route>
-        {/* Route Main  */}
-        <Route path="/">
-          <AppLayout>
+            </AdminLayout>
+          </Route>
+          {/* Route Main  */}
+          <Route path="/">
             <Switch>
-              <Route path="/" exact>
-                <Home />
-              </Route>
-              <Route path="/courses/:category">
-                <Courses />
-              </Route>
-              <Route path="/course/:id">
-                <Course />
-              </Route>
-              <Route path="/login">
-                <LoginPage />
-              </Route>
-
-              {/* Default  */}
-              <Route path="*">
-                <Home />
-              </Route>
+            <Route path="/login">
+                    <LoginPage />
+                  </Route>
+              <AppLayout>
+                <Switch>
+                  <Route path="/" exact>
+                    <Home />
+                  </Route>
+                  <Route path="/courses/:category">
+                    <Courses />
+                  </Route>
+                  <Route path="/course/:id">
+                    <Course />
+                  </Route>
+                  {/* Default  */}
+                  <Route path="*">
+                    <Home />
+                  </Route>
+                </Switch>
+              </AppLayout>
             </Switch>
-          </AppLayout>
-        </Route>
-      </Switch>
-    </BrowserRouter>
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </Suspense>
   );
 }
