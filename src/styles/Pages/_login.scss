@@ -1,0 +1,101 @@
+body {
+    width: 100%;
+    margin: 0 auto;
+}
+.container-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f2f2f2;
+    .form-container{
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 55vw;
+        height: 60vh;
+        background: #fff;
+        box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        transition: transform 0.5s;
+        .header a{
+            color: rgb(235,0,235);
+        }
+    }
+    .form-container:hover {
+        transform: translateY(-10px) rotate(-1deg);
+    }
+    .form-image {
+        position:   absolute;
+        color: #fff;
+        height: 100%;
+        width: 50%;
+        background:  linear-gradient(rgb(235,0,235),rgb(17,166,223));
+        right: 0;
+        clip-path: polygon(0 0, 100% 0, 100% 100%,70% 100%);
+        .text {
+            position: absolute;
+            right: 0;
+            padding: 30px;
+            text-align: right;
+            width: 60%;
+        }
+        .text p{font-size: 12px;}
+        .text h2 {font-size: 34px; margin-bottom: 20px;}
+    }
+    .form-group {
+        .btn-login {
+            position: relative;
+            background: rgb(235,0,235);
+            color: #fff;
+            z-index: 1;
+            overflow: hidden;
+        }
+        .btn-login::before {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 100px;
+            border-radius: 5px;
+            background: linear-gradient(to left,rgb(235,0,255),rgb(17,166,223));
+            left: -100px;
+            top: 0;
+            transition: 0.5s;
+        }
+        .btn-login:hover:before {
+            transform: translateX(100px);
+            z-index: -1;
+        }
+
+    }
+    .form-input-signUp {
+        max-width: 550px;
+        .form-image {
+            height: 100%;
+            width: 40%;
+            
+        }
+    }
+}
+.singup {
+    .form-image {
+        height: 100%;
+        width: 40%;
+        
+    }
+}
+.form-group-login {
+    margin-left: 20px;
+}
+@media (min-width: 320px) { 
+    .container-login .form-image{
+        display: none;
+    }
+    .form-input {
+        padding-right: 20px;
+    }
+}
+@media (min-width: 1200px) { 
+    .container-login .form-image{
+        display: block;
+    }
+}

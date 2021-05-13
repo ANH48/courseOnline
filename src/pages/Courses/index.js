@@ -9,8 +9,7 @@ export default function Courses() {
 
     const {category} = useParams();
 
-    const {courses,isLoading,error} = useSelector((state) => state.courses);
-
+    const {coursesbycategory,isLoading,error} = useSelector((state) => state.courses);
     // console.log(courses);
     // Được chạy lại mỗi khi categry đuoc chạy và thay đổi new data
     useEffect(() => {
@@ -18,25 +17,29 @@ export default function Courses() {
        dispatch(getCourseByCategory(category));
     },[category])
     // console.log(courses)
-    // const renderCourse = () => {
-    //     return Object.entries(courses).map(([propcourses,danhmuc],index) => {
-    //         const {maKhoaHoc,hinhAnh,moTa} = danhmuc;
-    //         return <div className="card" key={index}>
-    //             {/* <h1>Tên Khoá học : {biDanh}</h1> */}
-    //             <img className="card-img-top" src={hinhAnh} alt=""/>
-    //             <div className="card-body">
-    //                 <h4 className="card-title">{maKhoaHoc}</h4>
-    //                 <p className="card-text">{moTa}</p>
-    //             </div>
-    //         </div>
-    //     })
-    // }
+    const renderCourse = () => {
+        if(error) {
+            return <div><h1>Khoá học đang bảo trì</h1></div>
+        }
+        return Object.entries(coursesbycategory).map(([propcourses,danhmuc],index) => {
+            const {maKhoaHoc,hinhAnh,moTa} = danhmuc;
+            return <div className="cards col-3" key={index}>
+                {/* <h1>Tên Khoá học : {biDanh}</h1> */}
+                <img className="card-img-top" src={hinhAnh} alt=""/>
+                <div className="card-body">
+                    <h4 className="card-title">{maKhoaHoc}</h4>
+                    <p className="card-text">{moTa}</p>
+                </div>
+            </div>
+        })
+    }
     return (
         <div>
-            <h1>Courses List by Catagory</h1>
-            {/* <div className="d-flex">
+            <h1>Courses List by {category}</h1>
+            <div className="row">
             {renderCourse()}
-            </div> */}
+            </div>
         </div>
     )
 }
+

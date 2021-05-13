@@ -1,27 +1,22 @@
 import React, { useEffect } from "react";
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  NavbarText
-} from 'reactstrap';
-import { login } from "src/actions/auth";
+import {useDispatch,useSelector} from 'react-redux'
+
 import NavMenu from "../Navbar";
-import { useDispatch, useSelector } from "react-redux";
+import {getCourses} from 'src/actions/courses'
+
+import {Button} from "reactstrap";
 
 export default function Header() {
   const { userInfo, isLoading, error } = useSelector((state) => state.auth);
   // if(isLoading){
   //   return <div>isLoading</div>
   // }
+  const dispatch = useDispatch();
+  useEffect(() => {
+    // dispatch action api lấy dskh 
+   dispatch(getCourses());
+},[])
+const {courses} = useSelector((state) => state.courses);
   return (
     <div>
       {/* <Link className="mr-2" to="/">Home</Link>
@@ -85,9 +80,9 @@ export default function Header() {
         <div className="navMenu">
           <NavMenu 
             userInfo= {userInfo}
+            listCourse = {courses}
             >
-            </NavMenu>
-              
+            </NavMenu>              
         </div>
       </div>
     </div>

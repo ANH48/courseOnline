@@ -1,0 +1,23 @@
+.slick-slider {
+    width: 90%;
+    margin: 30px auto;
+    .slick-prev {
+        left: -15px;
+        z-index: 1000;
+        &::before {
+        font-size: 50px;
+        color: #007791;
+        }
+    }
+    .slick-next {
+        right: 0px;
+        z-index: 1000;
+        &::before {
+            color: #007791;
+            font-size: 50px;
+            }
+    }
+    .slick-disabled {
+        opacity: 0;
+    }
+}

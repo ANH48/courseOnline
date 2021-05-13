@@ -103,7 +103,7 @@ export default function LoginPage() {
             <div className="header">
               <h2>Login</h2>
               <p>
-                Don't have an account?<a href="#">Create your account</a>
+                Don't have an account?<a href="/signup">Create your account</a>
               </p>
             </div>
             <FormGroup className="ml-2">
@@ -133,7 +133,7 @@ export default function LoginPage() {
               </Alert>
             )}
 
-            {/* {error && <Alert color="danger">{error}</Alert>} */}
+            {error && <Alert color="danger">{error}</Alert>}
             <FormGroup className="d-flex ml-4 justify-content-between" >
               <div className="remember">
                 <Input type="checkbox" />

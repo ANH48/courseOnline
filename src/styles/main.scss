@@ -1,0 +1,41 @@
+// Chứa đường dẫn đến các file con 
+// Không đc chứa bất kì code css hay style thiết kế 
+
+// Helper
+@import './Helper/variables';
+@import './Helper/mixin';
+
+// Vendor 
+
+
+// Base 
+@import './Base/reset';
+@import './Base/customize';
+
+// Components
+@import './Components/button';
+@import './Components/card';
+@import './Components/slick';
+
+// Layouts
+// @import './Layouts/header';
+// @import './Layouts/carosel';
+// @import './Layouts/footer';
+// @import './Layouts/intro';
+// @import './Layouts/courses';
+// @import './Layouts/services';
+// @import './Layouts/topCategories';
+// @import './Layouts/feedback';
+
+
+@import './Layouts/footer';
+@import './Layouts/header';
+
+
+
+// Pages 
+@import './Pages/login';
+@import './Pages/cart';
+@import './Pages/home';
+@import './Pages/intro';
+// Theme 

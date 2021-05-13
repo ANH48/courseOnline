@@ -1,0 +1,39 @@
+.cards__itro {
+    padding: 50px;
+    border: 1px solid black;
+    .nav-tabs {
+        // border-bottom: 1px solid #d8d8d8;
+        .nav-item {
+            // border-bottom: 1px solid #d8d8d8;
+            position: relative;
+                .nav-link {
+                    border: none;
+                    color: #495057;
+                    &:hover {
+                        border: none;
+                        color: #007791;
+                        padding: .5rem 1rem;
+                        cursor: pointer;
+                    }
+                }
+                
+                .nav-link.active {
+                color: #333;
+                border-bottom: 3px solid #007791;
+            }
+        }
+    }
+    .tab-content {
+        margin-left: 5px;
+    }
+    .cards__itro-content {
+        width: 600px;
+        p {
+            font-size: 13px;
+        }
+    }
+}
+.cards__itro-container {
+    width: 100%;
+    margin: 0 auto;
+}

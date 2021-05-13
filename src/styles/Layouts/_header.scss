@@ -1,0 +1,87 @@
+.img-logo {
+    width: 200px;
+    height: 70px;
+}
+.header {
+    .header-top{
+        background-color: #e91e63;
+        padding-top: 14px;
+        ul li {
+            list-style: none;
+            display: inline;
+        }
+        .header-left-content {
+            color: #fff;
+            font-weight: 700;
+            font-size: 13px;
+            span {
+                margin-right: 10px;
+                a {
+                    color: #FFF;
+                }
+            }
+            i {
+                font-size: 15px;
+                margin-right: 8px;
+            }
+        }
+        .header-social ul{
+            display: flex;
+            li{
+                margin-left: 10px;
+                a {
+                    color: #fff;
+                    border: 1px solid #FFF;
+                    /* padding: 10px; */
+                    width: 35px;
+                    height: 35px;
+                    text-align: center;
+                    line-height: 33px;
+                    display: block;
+                    transition: all 1s;
+                    border-radius: 50%;
+                    background: rgba(224, 224, 224, 0.2);
+                    i {
+                        font-size: 13px;
+                    }
+                }
+                a:hover {
+                    color: rgb(180, 180, 180);
+                    background: rgba(224, 224, 224, 0.6);
+                }
+            }
+        }
+    }
+    a {
+        text-decoration: none;
+    }
+    .Search__form {
+       width: 820px;
+       position: relative;
+       .search__result {
+           width: 820px;
+           background-color: rgb(255, 255, 255);
+           position: absolute;
+           left: 0;
+           top: 40px;
+           z-index: 1000;
+           li {
+               list-style: none;
+               padding: 5px 15px;
+               margin: 5px 0px;
+               background-color: rgb(255, 255, 255);
+               &:hover {
+                background-color: #e9ecef;
+                cursor: pointer;
+               }
+           }
+       }
+    }
+}
+
+@include reponsive("supper-sm"){
+    .header {
+        width: 90%;
+        margin: 0 auto;
+    }
+}

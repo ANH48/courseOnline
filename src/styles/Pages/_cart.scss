@@ -1,0 +1,34 @@
+.cart {
+    width: 90%;
+    margin: 0 auto;
+    .container {
+        margin: 100px auto;
+    }
+    .countListCoursesAdd {
+        p {
+            font-size: 24px;
+        }
+    }
+    .listCoursesAdd {
+        border: 1px solid black;
+        .icon_cart {
+            padding-top: 50px;
+            font-size: 120px;
+            text-align: center;
+            margin-left: -33px;
+        }
+        .cart_text {
+            font-size: 14px;
+            text-align: center;
+            p {
+                display: inline;
+            }
+        }
+        .cart_btn {
+            margin: 20px 0px; 
+        }
+    }
+}
+.cart_center {
+    text-align: center;
+}
